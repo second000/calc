@@ -1,75 +1,68 @@
-// 'use strict'
-// let buttons= document.querySelectorAll('button');
-// let display = document.getElementById('display');
-//
-// let userClick = function(el) {
-//   let value = el.target.textContent;
-//   display.value = value;
-// }
-//
-// for (let i = 0; i < buttons.length; i++) {
-//   let button = buttons[i];
-//   button.addEventListener('click', userClick);
-// }
+'use strict';
 let numbers = document.querySelectorAll('.number');
 let operations = document.querySelectorAll('.operation');
+let parenthesisBtns = document.querySelectorAll('.parenthesis')
+let clearBtns = document.querySelectorAll('.clear')
 let decimalBtn = document.getElementById('decimal');
-let ce = document.getElementById('ce');
-let c = document.getElementById('c');
-let result = document.getElementById('result');
+let resultBtn = document.getElementById('result');
 let howWorkBtn = document.getElementById('howWorkBtn');
 
 
-for (let i=0; i<numbers.length; i++) {
+
+for (let i = 0; i < numbers.length; i++) {
   let number = numbers[i];
-  number.addEventListener('click', function (e) {
-    console.log('!');
-});
+  number.addEventListener('click', numberPress);
 };
 
 for (let i=0; i<operations.length; i++) {
-  let operation = operations[i];
-  operation.addEventListener('click', function (e) {
-    console.log('!');
-});
+  let operationBtn = operations[i];
+  operationBtn.addEventListener('click', operation);
 };
 
-decimalBtn.addEventListener('click', function (e) {
-  console.log('!');
-});
+for (let i=0; i<clearBtns.length; i++) {
+  let clearBtn = clearBtns[i];
+  clearBtn.addEventListener('click', function (e) {
+    clear(e.srcElement.id);
+  });
+};
 
-ce.addEventListener('click', function (e) {
-  console.log('!');
-});
+for (let i=0; i<parenthesisBtns.length; i++) {
+  let parenthesisBtn = parenthesisBtns[i];
+  parenthesisBtn.addEventListener('click', parenthesis);
+};
 
-c.addEventListener('click', function (e) {
-  console.log('!');
-});
+decimalBtn.addEventListener('click', decimal);
 
-result.addEventListener('click', function (e) {
-  console.log('!');
-});
+resultBtn.addEventListener('click', result);
 
-howWorkBtn.addEventListener('click', function (e) {
-  console.log('!');
-});
+howWorkBtn.addEventListener('click', howWork);
+
+
 
 function numberPress() {
-
+  console.log('Клик по кнопке с номером');
 };
 
 function operation(arg) {
-
+  console.log('Клик по кнопке с операцией');
 };
 
 function decimal(arg) {
-
+  console.log('Клик по кнопке .');
 };
 
-function clear(arg) {
+function clear(id) {
+  console.log(`Клик по кнопке ${id}`);
+};
 
+function result(arg) {
+  console.log('Клик по кнопке result');
 };
 
 function howWork(arg) {
+  console.log('Клик по кнопке ?');
+};
 
+function parenthesis() {
+  console.log('Клик по кнопке ()');
 };
